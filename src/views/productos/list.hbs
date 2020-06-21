@@ -1,0 +1,56 @@
+<div class="container">
+    {{!-- <div class="card card-body text-center">
+        <a href="/productos/add">Crea un producto</a>
+        <a href="">Buscar productos</a>
+    </div> --}}
+     <div class="card text-rigth">
+        <form class="card-body" action="/productos/add" method="get">
+            <h1>Productos</h1>
+            <input type="submit" value="Nuevo Producto" class="btn btn-primary">        
+        </form>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">U/compra</th>
+                <th scope="col">U/venta</th>
+                <th scope="col">Stock-Min</th>
+                <th scope="col">Stock-Max</th>
+                <th scope="col">Prec.Comp</th>
+                <th scope="col">Prec.venta</th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {{#each mostrar}}
+            <tr>
+                <th scope="row">{{id}}</th>
+                <td>{{ cod_product }}</td>
+                <td>{{ name }}</td>
+                <td>{{ unidad }}</td>
+                <td>{{unidad_compra}}</td>
+                <td>{{ inventario_min }}</td>
+                <td>{{ inventario_max }}</td>
+                <td>{{ precio_in }}</td>
+                <td>{{ precio_out }}</td>
+                <td>
+                    <a href="/productos/delete/{{id}}"><img src="./img/eliminar.png" alt=""> | </a>
+                    <a href="/productos/edit/{{id}}"><img src="./img/editar.png" alt=""> | </a>
+                    <a href="/productos/repo/{{id}}"><img src="./img/entrada.png" alt=""> | </a>
+                    <a href="/productos/salidas/{{id}}"><img src="./img/salida.png" alt=""></a>
+            </tr>
+            {{else}}
+            <div class="col-md-4 mx-auto p-4">
+                <div class="card card-body text-center">
+                    <p>No hay ningun cliente registrado aún</p>
+                    <a href="/categorias/add">Crea uno..!</a>
+                </div>
+            </div>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

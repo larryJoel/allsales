@@ -1,0 +1,30 @@
+<div class="container m-4">
+    <div class="row">
+        <div class="card m-12 mx-auto">
+            <form class="card-body" action='/ventas/cabecera' method="post">
+                <h3 class="card-title">Buscar Clientes </h3>
+                <div class="form-group">
+                    <input name="documento" type="text" class="form-control" placeholder="Nro. de documento" autofocus
+                        required><br>
+                    <p>Por favor, agrega un numero de documento para buscar al cliente</p>
+                </div>
+                <a href="/clientes/add">Crear nuevo cliente</a>
+                <input type="submit" value='Cargar cliente' class="btn btn-primary">
+                <a href="/ventas/fact" class="btn btn-danger">Regresar</a>
+            </form>
+            {{!-- condición: si encuentra o no al cliente --}}
+            <hr>
+            <p class="card-body">Nombre: {{nombre_cliente}} Documento: {{documento_cliente}}<br>
+                Venta Nro.: {{factura}} Monto Total: {{venta}} USD$
+            <form action="/ventas/list"class="card-body" method="POST">
+                <input type="hidden" name="numero_fact" value="{{factura}}">
+                <input type="hidden" name="id_cliente" value="{{id_cliente}}">
+                <input type="hidden" name="documento" value="{{documento_cliente}}">
+                <input type="hidden" name="monto_total" value="{{venta}}">
+                {{!-- <input type="hidden" name="id_usuario" value=""> --}}
+                <input type="submit" value='Grabar venta' class="btn btn-primary">
+            </form>
+            </p>
+        </div>
+    </div>
+</div>

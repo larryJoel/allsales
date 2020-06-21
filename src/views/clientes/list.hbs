@@ -1,0 +1,41 @@
+<div class="container">
+      <div class="card text-rigth">
+        <form class="card-body" action="/clientes/add" method="get">
+        <h1>Clientes</h1>
+            <input type="submit" value="Nuevo Cliente" class="btn btn-primary">        
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Nombre y apellido</th>
+                    <th scope="col">email</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Procesar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each lista}}
+                <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{ username }}</td>
+                    <td>{{ documento }}</td>
+                    <td>{{ fullname }}</td>
+                    <td>{{ email }}</td>
+                    <td>{{ phone }}</td>
+                    <td><a href="/clientes/delete/{{id}}"class="fas fa-trash-alt"></a>
+                    <a href="/clientes/edit/{{id}}" class="fas fa-edit"></a></td>
+                </tr>
+                {{else}}
+                <div class="col-md-4 mx-auto p-4">
+                    <div class="card card-body text-center">
+                        <p>No hay ningun cliente registrado aún</p>
+                        <a href="/clientes/add">Crea uno..!</a>
+                    </div>
+                </div>
+                {{/each}}
+            </tbody>
+        </table>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+      <div class="card text-rigth">
+        <form class="card-body" action="/categorias/add" method="get">
+           <h1>Categorias</h1>  <input type="submit" value="Nueva Categoria" class="btn btn-primary">    
+        </form>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each lista}}
+                <tr>
+                    <th scope="row">{{id}}</th>
+                    <td>{{ name }}</td>
+                    <td>{{ descripcion }}</td>
+                    <td><a href="/categorias/delete/{{id}}"class="fas fa-trash-alt"></a>
+                    <a href="/categorias/edit/{{id}}" class="fas fa-edit"></a></td>
+                </tr>
+                {{else}}
+                <div class="col-md-4 mx-auto p-4">
+                    <div class="card card-body text-center">
+                        <p>No hay ningun cliente registrado aún</p>
+                        <a href="/categorias/add">Crea uno..!</a>
+                    </div>
+                </div>
+                {{/each}}
+            </tbody>
+        </table>
+</div>

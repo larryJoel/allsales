@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="card card-body text-center">
+        <a href="/productos/add">Crea un producto</a>
+        <a href="">Buscar productos</a>
+    </div>
+    <h3 class="text-center">Listado de entradas</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Codigo</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">cantidad</th>
+                <th scope="col">usuario</th>
+                <th scope="col">Concepto</th>
+                <th scope="col">Creado Fecha</th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {{#each mostrar}}
+            <tr>
+                <th scope="row">{{id}}</th>
+                <td>{{ cod_product }}</td>
+                <td>{{ name }}</td>
+                <td>{{cant}}</td>
+                <td>{{usuario}}</td>
+                <td>{{ concepto}}</td>
+                <td>{{ ent_creada }}</td>
+                {{!-- <td> <a href="/in/delete/{{id}},{{cant}}" class="btn btn-danger btn-block">Delet</a> --}}
+            </tr>
+            {{else}}
+            <div class="col-md-4 mx-auto p-4">
+                <div class="card card-body text-center">
+                    <p>No hay ninguna entrada registrado aún</p>
+                    <a href="/productos">Crea uno..!</a>
+                </div>
+            </div>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

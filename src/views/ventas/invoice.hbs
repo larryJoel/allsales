@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="card m-4">
+        <div class="card-header">
+            Registro de Ventas - AllSales
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Ventas Nro. {{fact.numero_fact}} - Monto total: {{cabecera.monto_total}}</h5>
+            <p class="card-text">Cliente: {{cabecera.documento}}. </p>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            {{!-- table de contenido --}}
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Descripción</th>
+                        <th scope="col">Cant.</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each detalle}}
+                    <tr>
+                        <td>{{id_producto}}</td>
+                        <td>{{descripcion}}</td>
+                        <td>{{cantidad}}</td>
+                        <td>{{precio}}</td>
+                        <td>{{total}}</td>
+                    </tr>
+                    {{else}}
+                    <div class="col-md-4 mx-auto p-4">
+                        <div class="card card-body text-center">
+                            <p>No hay productos registrados aún</p>
+                        </div>
+                    </div>
+                    {{/each}}
+                </tbody>
+            </table>
+
+            <a href="#" class="btn btn-primary">Regresar al listado</a>
+        </div>
+    </div>
+
+</div>

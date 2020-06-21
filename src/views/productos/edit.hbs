@@ -1,0 +1,57 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/productos/edit/{{links.id}}" method="POST">
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="{{links.cod_product}}" name="cod_product"
+                                placeholder="Código del producto" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Nombre del producto"
+                                value="{{links.name}}" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" value="{{links.unidad}}" name="unidad"
+                                placeholder="Unidad Venta">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="unidad_compra" value="{{links.unidad_compra}}"
+                                placeholder="Unidad Compra">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="presentacion" placeholder="Presentacion"
+                                value="{{links.presentacion}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inventario_min"
+                                placeholder="inventario Mínimo" value="{{links.inventario_min}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="inventario_max"
+                                placeholder="Inventario Máximo" value="{{links.inventario_max}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="precio_in" placeholder="Precio de compra"
+                                value="{{links.precio_in}}">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="precio_out" placeholder="Precio de venta"
+                                value="{{links.precio_out}}">
+                        </div>
+                        <div class="form-group">
+                            <textarea rows="2" class="form-control" name="descripcion"
+                                placeholder="Descripcion">{{links.descripcion}}"</textarea>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-success btn-block">
+                                guardar/Save
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="card text-rigth">
+        <form class="card-body" action="/ventas/list" method="get">
+        <h1>Ventas</h1>
+            <input type="submit" value="Nueva venta" class="btn btn-primary">        
+        </form>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nro. Fact.</th>
+                <th scope="col">cliente</th>
+                <th scope="col">Monto Fact.</th>
+                <th scope="col">Operaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each ventas}}
+            <tr>
+                <th scope="row">{{id_factura}}</th>
+                <td>{{ numero_fact }}</td>
+                <td>{{ documento }}</td>
+                <td>{{ monto_total }}</td>
+                <td><a href="/ventas/delete/{{numero_fact}}"><img src="./img/eliminar.png" alt=""></a> | <a href="/ventas/mostrar/{{numero_fact}}"><img src="./img/ver.png" alt=""></a>
+                </td>
+            </tr>
+            {{else}}
+            <div class="col-md-4 mx-auto p-4">
+                <div class="card card-body text-center">
+                    <p>No hay ningun cliente registrado aún</p>
+                    <a href="/categorias/add">Crea uno..!</a>
+                </div>
+            </div>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+{{!-- <script src="/public/libs/jquery.min.js"></script> --}}
